@@ -15,7 +15,6 @@
 {
     UIImage *_drawImage;
     CGPoint _drawPoint;
-    
     CGPoint _centroid;
 }
 
@@ -25,22 +24,17 @@
     if (self)
     {
 		_faceTrackingEnabled = YES;
-        self.clipsToBounds = YES;
         self.userInteractionEnabled = NO;
 		
+		//flip rendering vertically, as we're drawing upside down (to agree with CI coordinate system)
 		self.transform = CGAffineTransformMakeScale(1, -1);
     }
     return self;
 }
 
-- (CGPoint) getCentroidOfFaces
+- (CGPoint) centroidOfFacesForImage:(UIImage *)image
 {
-	if (!_faceTrackingEnabled)
-		return CGPointZero;
-	
-    CIImage *ci = [[CIImage alloc] initWithImage:_drawImage];
-    
-    CGFloat scaleOut = 1/_drawImage.scale;
+    CIImage *ci = [[CIImage alloc] initWithImage:image];
     
     CIDetector* detector = [CIDetector detectorOfType:CIDetectorTypeFace
                                               context:nil
@@ -52,8 +46,7 @@
     for (int i = 0; i < faces.count; i++)
     {
 		CIFaceFeature *face = faces[i];
-		CGAffineTransform transform = CGAffineTransformMakeScale(scaleOut, scaleOut);
-        CGRect bounds = CGRectApplyAffineTransform(face.bounds, transform);
+        CGRect bounds = face.bounds;
 
         /*
         UIView *faceRect = [[UIView alloc] initWithFrame:bounds];
@@ -76,6 +69,12 @@
     return centroid;
 }
 
+- (void) setImage:(UIImage *)image
+{
+    _image = image;
+    _centroid = [self centroidOfFacesForImage:image];
+}
+
 - (void) positionImage
 {
     CGFloat scaleX = _image.scale*_image.size.height/self.bounds.size.height;
@@ -84,19 +83,17 @@
 
     _drawImage = [[UIImage alloc] initWithCGImage:_image.CGImage scale:scale orientation:UIImageOrientationDownMirrored];
 
-    _centroid = [self getCentroidOfFaces];
-	
-	//no faces detected or tracking is not enabled
-	if (CGPointEqualToPoint(_centroid, CGPointZero))
+	if (!_faceTrackingEnabled || CGPointEqualToPoint(_centroid, CGPointZero))
 	{
+		//simply center image in the view
 		_drawPoint.x = (self.bounds.size.width - _drawImage.size.width)/2;
 		_drawPoint.y = (self.bounds.size.height - _drawImage.size.height)/2;
 	}
 	else
 	{
 		//centroid should be in the center of our view
-		_drawPoint.x = -(_centroid.x - self.bounds.size.width/2);
-		_drawPoint.y = -(_centroid.y - self.bounds.size.height/2);
+		_drawPoint.x = -(_centroid.x/scale - self.bounds.size.width/2);
+		_drawPoint.y = -(_centroid.y/scale - self.bounds.size.height/2);
 
 		//max offset is 0 (if we go beyond, it'll show black as inset)
 		//min offset is the image size - our bounds (if we go before this there won't be enough image to cover up our bounds)
@@ -105,11 +102,6 @@
 	}
 	
 	[self setNeedsDisplay];
-}
-
-- (void) setImage:(UIImage *)image
-{
-    _image = image;
 }
 
 - (void)drawRect:(CGRect)rect
@@ -121,5 +113,6 @@
 {
     [self positionImage];
 }
+
 
 @end
