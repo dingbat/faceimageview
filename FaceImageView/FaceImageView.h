@@ -11,6 +11,8 @@
 @interface FaceImageView : UIView
 
 @property (nonatomic, strong) UIImage *image;
-@property (nonatomic) BOOL faceTrackingEnabled;
+@property (nonatomic, assign) BOOL faceTrackingEnabled;
+
+@property (nonatomic, readonly) int numberOfFacesDetected;
 
 @end

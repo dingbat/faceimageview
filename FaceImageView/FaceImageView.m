@@ -32,18 +32,18 @@
     return self;
 }
 
-- (CGPoint) centroidOfFacesForImage:(UIImage *)image
+- (void) calculateCentroidOfFaceLocations
 {
-    CIImage *ci = [[CIImage alloc] initWithImage:image];
-    
+    CIImage *ci = [[CIImage alloc] initWithImage:_image];
     CIDetector* detector = [CIDetector detectorOfType:CIDetectorTypeFace
                                               context:nil
                                               options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
 	
     NSArray *faces = [detector featuresInImage:ci];
+    _numberOfFacesDetected = faces.count;
     
     CGPoint centroid = CGPointZero;
-    for (int i = 0; i < faces.count; i++)
+    for (int i = 0; i < _numberOfFacesDetected; i++)
     {
 		CIFaceFeature *face = faces[i];
         CGRect bounds = face.bounds;
@@ -60,19 +60,19 @@
 		centroid.y += center.y;
     }
 	
-	if (faces.count > 0)
+	if (_numberOfFacesDetected > 0)
 	{
 		centroid.x /= faces.count;
 		centroid.y /= faces.count;
 	}
     
-    return centroid;
+    _centroid = centroid;
 }
 
 - (void) setImage:(UIImage *)image
 {
     _image = image;
-    _centroid = [self centroidOfFacesForImage:image];
+    [self calculateCentroidOfFaceLocations];
 }
 
 - (void) positionImage
@@ -113,6 +113,5 @@
 {
     [self positionImage];
 }
-
 
 @end
