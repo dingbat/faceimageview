@@ -28,9 +28,6 @@
         _faceTrackingEnabled = YES;
         self.userInteractionEnabled = NO;
 		
-		//flip rendering vertically, as we're drawing upside down (to agree with CI coordinate system)
-		self.transform = CGAffineTransformMakeScale(1, -1);
-
         _faceDetector = [CIDetector detectorOfType:CIDetectorTypeFace
                                            context:nil
                                            options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
@@ -111,6 +108,12 @@
 
 - (void)drawRect:(CGRect)rect
 {
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    //flip context vertically, as the image is rendered upside down (to agree with the CI coordinate system)
+    CGContextTranslateCTM(context, 0, self.bounds.size.height);
+    CGContextScaleCTM(context, 1.0, -1.0);
+    
     [_drawImage drawAtPoint:_drawPoint];
 }
 
