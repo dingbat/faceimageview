@@ -16,6 +16,8 @@
     UIImage *_drawImage;
     CGPoint _drawPoint;
     CGPoint _centroid;
+    
+    CIDetector *_faceDetector;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -23,11 +25,15 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-		_faceTrackingEnabled = YES;
+        _faceTrackingEnabled = YES;
         self.userInteractionEnabled = NO;
 		
 		//flip rendering vertically, as we're drawing upside down (to agree with CI coordinate system)
 		self.transform = CGAffineTransformMakeScale(1, -1);
+
+        _faceDetector = [CIDetector detectorOfType:CIDetectorTypeFace
+                                           context:nil
+                                           options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
     }
     return self;
 }
@@ -35,11 +41,7 @@
 - (void) calculateCentroidOfFaceLocations
 {
     CIImage *ci = [[CIImage alloc] initWithImage:_image];
-    CIDetector* detector = [CIDetector detectorOfType:CIDetectorTypeFace
-                                              context:nil
-                                              options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
-	
-    NSArray *faces = [detector featuresInImage:ci];
+    NSArray *faces = [_faceDetector featuresInImage:ci];
     _numberOfFacesDetected = faces.count;
     
     CGPoint centroid = CGPointZero;
