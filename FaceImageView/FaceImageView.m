@@ -61,12 +61,17 @@
         faceRect.layer.borderColor = [UIColor redColor].CGColor;
         [self addSubview:faceRect];
         */
+		
         CGPoint center = CGPointMake(bounds.origin.x + bounds.size.width/2, bounds.origin.y + bounds.size.height/2);
-        if (i == 0)
-            centroid = center;
-        else
-            centroid = CGPointMake(fabs(centroid.x - center.x), fabs(centroid.y - center.y));
+        centroid.x += center.x;
+		centroid.y += center.y;
     }
+	
+	if (faces.count > 0)
+	{
+		centroid.x /= faces.count;
+		centroid.y /= faces.count;
+	}
     
     return centroid;
 }
