@@ -73,6 +73,9 @@
 {
     _image = image;
     [self calculateCentroidOfFaceLocations];
+    
+    if (self.superview)
+        [self positionImage];
 }
 
 - (void) positionImage
