@@ -35,9 +35,11 @@
 
 - (CGPoint) getCentroidOfFaces
 {
+	if (!_faceTrackingEnabled)
+		return CGPointZero;
+	
     CIImage *ci = [[CIImage alloc] initWithImage:_drawImage];
     
-    CGFloat scaleIn = _drawImage.scale;
     CGFloat scaleOut = 1/_drawImage.scale;
     
     CIDetector* detector = [CIDetector detectorOfType:CIDetectorTypeFace
@@ -50,7 +52,7 @@
     for (int i = 0; i < faces.count; i++)
     {
 		CIFaceFeature *face = faces[i];
-		CGAffineTransform transform = CGAffineTransformTranslate(CGAffineTransformMakeScale(scaleOut, scaleOut), _drawPoint.x*scaleIn, _drawPoint.y*scaleIn);
+		CGAffineTransform transform = CGAffineTransformMakeScale(scaleOut, scaleOut);
         CGRect bounds = CGRectApplyAffineTransform(face.bounds, transform);
 
         /*
@@ -76,21 +78,26 @@
 	CGFloat scale = MIN(scaleX, scaleY);
 
     _drawImage = [[UIImage alloc] initWithCGImage:_image.CGImage scale:scale orientation:UIImageOrientationDownMirrored];
-    _drawPoint = CGPointMake((self.bounds.size.width - _drawImage.size.width)/2, (self.bounds.size.height - _drawImage.size.height)/2);
 
     _centroid = [self getCentroidOfFaces];
 	
-	//centroid should be in the center
-	if (!CGPointEqualToPoint(_centroid, CGPointZero) && _faceTrackingEnabled)
+	//no faces detected or tracking is not enabled
+	if (CGPointEqualToPoint(_centroid, CGPointZero))
 	{
-		_drawPoint.x = -(_centroid.x-_drawPoint.x - self.bounds.size.width/2);
-		_drawPoint.y = -(_centroid.y-_drawPoint.y - self.bounds.size.height/2);
+		_drawPoint.x = (self.bounds.size.width - _drawImage.size.width)/2;
+		_drawPoint.y = (self.bounds.size.height - _drawImage.size.height)/2;
 	}
+	else
+	{
+		//centroid should be in the center of our view
+		_drawPoint.x = -(_centroid.x - self.bounds.size.width/2);
+		_drawPoint.y = -(_centroid.y - self.bounds.size.height/2);
 
-	//max offset is 0 (if we go beyond, it'll show black as inset)
-	//min offset is the image size - our bounds (if we go before this there won't be enough image to cover up our bounds)
-	_drawPoint.x = MAX(MIN(_drawPoint.x,0),-(_drawImage.size.width-self.bounds.size.width));
-	_drawPoint.y = MAX(MIN(_drawPoint.y,0),-(_drawImage.size.height-self.bounds.size.height));
+		//max offset is 0 (if we go beyond, it'll show black as inset)
+		//min offset is the image size - our bounds (if we go before this there won't be enough image to cover up our bounds)
+		_drawPoint.x = MAX(MIN(_drawPoint.x,0),-(_drawImage.size.width-self.bounds.size.width));
+		_drawPoint.y = MAX(MIN(_drawPoint.y,0),-(_drawImage.size.height-self.bounds.size.height));
+	}
 	
 	[self setNeedsDisplay];
 }
