@@ -28,4 +28,9 @@ Watch faces automatically stay centered in the view as it changes size:
 
 --------------
 
+#### Further thoughts: ####
+- Have it give suggestions for minimum height, as to not entirely cut off a face?
+- With multiple faces, maybe prefer to keep at least one face entirely in view rather than halfway between many?
+- It seems like face detection implementation has changed between iOS 6 and 7. The former detects the face in image #4, but the latter does not. Not sure what to do with this, maybe it is temporary.
+
 Posted for the [Objective-C hackathon](https://objectivechackathon.appspot.com/) effort :)
