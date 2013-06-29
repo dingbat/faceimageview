@@ -1,0 +1,5 @@
+# Ignore Xcode noise
+
+DerivedData
+xcuserdata
+project.xcworkspace
