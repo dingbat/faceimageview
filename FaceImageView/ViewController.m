@@ -11,55 +11,84 @@
 
 @implementation ViewController
 {
-	FaceImageView *face;
+    UIView *controlsView;
+	FaceImageView *imageView;
 }
 
 - (void)viewDidLoad
 {
+    /* Add a FaceImageView to our view */
+    
+	imageView = [[FaceImageView alloc] initWithFrame:CGRectZero];
+    imageView.layer.borderColor = [UIColor blackColor].CGColor;
+    imageView.layer.borderWidth = 1;
+	[self.view addSubview:imageView];
+	
+    
+    /* Add some controls for the demo */
+    
+    controlsView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 120)];
+    
+    int margin = 10;
+    int sliderWidth = (self.view.bounds.size.width-margin*3)/2;
+    int sliderHeight = 35;
+    
+	UISlider *widthSlider = [[UISlider alloc] initWithFrame:CGRectMake(margin, margin*2, sliderWidth, sliderHeight)];
+	widthSlider.minimumValue = margin;
+	widthSlider.maximumValue = self.view.bounds.size.width-margin*2;
+	widthSlider.value = widthSlider.maximumValue;
+	[widthSlider addTarget:self action:@selector(changeWidth:) forControlEvents:UIControlEventValueChanged];
+	[self.view addSubview:widthSlider];
+	
+	UISlider *heightSlider = [[UISlider alloc] initWithFrame:CGRectMake(margin+sliderWidth+margin, margin*2, sliderWidth, sliderHeight)];
+	heightSlider.minimumValue = margin;
+	heightSlider.maximumValue = self.view.bounds.size.height-margin*2-controlsView.frame.size.height;
+	heightSlider.value = heightSlider.maximumValue;
+	[heightSlider addTarget:self action:@selector(changeHeight:) forControlEvents:UIControlEventValueChanged];
+	[self.view addSubview:heightSlider];
+    
+    UISegmentedControl *imageControl = [[UISegmentedControl alloc] initWithItems:@[@"1", @"2", @"3", @"4", @"5"]];
+    imageControl.selectedSegmentIndex = 0;
+    imageControl.frame = CGRectMake(margin, margin*2+sliderHeight+margin, self.view.bounds.size.width-margin*2, 35);
+    [imageControl addTarget:self action:@selector(changeImage:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:imageControl];
+	
+	[self changeHeight:heightSlider];
+	[self changeWidth:widthSlider];
+    [self changeImage:imageControl];
+    
+    
 	self.view.backgroundColor = [UIColor whiteColor];
-	
-	face = [[FaceImageView alloc] initWithFrame:CGRectZero];
-    face.layer.borderColor = [UIColor blackColor].CGColor;
-    face.layer.borderWidth = 1;
-    face.image = [UIImage imageNamed:@"gold-panda"];
-	face.faceTrackingEnabled = YES;
-    [self.view addSubview:face];
-	
-	UISlider *wSlider = [[UISlider alloc] initWithFrame:CGRectMake(10, 10, 150, 35)];
-	wSlider.minimumValue = 10;
-	wSlider.maximumValue = 300;
-	wSlider.value = 320;
-	[wSlider addTarget:self action:@selector(changeWidth:) forControlEvents:UIControlEventValueChanged];
-	[self.view addSubview:wSlider];
-	
-	UISlider *hSlider = [[UISlider alloc] initWithFrame:CGRectMake(10+150, 10, 150, 35)];
-	hSlider.minimumValue = 10;
-	hSlider.maximumValue = 320;
-	hSlider.value = 200;
-	[hSlider addTarget:self action:@selector(changeHeight:) forControlEvents:UIControlEventValueChanged];
-	[self.view addSubview:hSlider];
-	
-	[self changeHeight:hSlider];
-	[self changeWidth:wSlider];
-	
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void) changeImage:(UISegmentedControl *)control
+{
+    NSString *image = @[@"gp.jpg", @"gold-panda", @"beatles.jpg", @"toro", @"squarepusher"][control.selectedSegmentIndex];
+    imageView.image = [UIImage imageNamed:image];
+    
+    NSLog(@"found %d face(s)",imageView.numberOfFacesDetected);
 }
 
 - (void) changeWidth:(UISlider *)slider
 {
-	face.frame = CGRectMake(10, 50, slider.value, face.frame.size.height);
+	imageView.frame = CGRectMake(10, CGRectGetMaxY(controlsView.frame), slider.value, imageView.frame.size.height);
 }
 
 - (void) changeHeight:(UISlider *)slider
 {
-	face.frame = CGRectMake(10, 50, face.frame.size.width, slider.value);
+	imageView.frame = CGRectMake(10, CGRectGetMaxY(controlsView.frame), imageView.frame.size.width, slider.value);
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSUInteger) supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 @end
