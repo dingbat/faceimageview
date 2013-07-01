@@ -47,14 +47,18 @@
 		CIFaceFeature *face = faces[i];
         CGRect bounds = face.bounds;
 
-        /*
-        UIView *faceRect = [[UIView alloc] initWithFrame:bounds];
-        faceRect.layer.borderWidth = 1;
-        faceRect.layer.borderColor = [UIColor redColor].CGColor;
-        [self addSubview:faceRect];
-        */
-		
         CGPoint center = CGPointMake(bounds.origin.x + bounds.size.width/2, bounds.origin.y + bounds.size.height/2);
+        
+        /* Move 75% towards the eyes, if detected */
+        int numberOfEyesDetected = face.hasLeftEyePosition + face.hasRightEyePosition;
+        CGPoint eyeCenter = CGPointMake((face.leftEyePosition.x + face.rightEyePosition.x)/numberOfEyesDetected,
+                                        (face.leftEyePosition.y + face.rightEyePosition.y)/numberOfEyesDetected);
+        if (!CGPointEqualToPoint(eyeCenter, CGPointZero))
+        {
+            center.x = (center.x + eyeCenter.x*3)/4;
+            center.y = (center.y + eyeCenter.y*3)/4;
+        }
+        
         centroid.x += center.x;
 		centroid.y += center.y;
     }
