@@ -98,13 +98,13 @@
 	else
 	{
 		//centroid should be in the center of our view
-		_drawPoint.x = -(_centroid.x/scale - self.bounds.size.width/2);
-		_drawPoint.y = -(_centroid.y/scale - self.bounds.size.height/2);
+		_drawPoint.x = self.bounds.size.width/2 - _centroid.x/scale;
+		_drawPoint.y = self.bounds.size.height/2 - _centroid.y/scale;
 
 		//max offset is 0 (if we go beyond, it'll show black as inset)
 		//min offset is the image size - our bounds (if we go before this there won't be enough image to cover up our bounds)
-		_drawPoint.x = MAX(MIN(_drawPoint.x,0),-(_drawImage.size.width-self.bounds.size.width));
-		_drawPoint.y = MAX(MIN(_drawPoint.y,0),-(_drawImage.size.height-self.bounds.size.height));
+		_drawPoint.x = MAX(MIN(_drawPoint.x,0),self.bounds.size.width-_drawImage.size.width);
+		_drawPoint.y = MAX(MIN(_drawPoint.y,0),self.bounds.size.height-_drawImage.size.height);
 	}
 	
 	[self setNeedsDisplay];
