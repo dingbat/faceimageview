@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "FaceImageView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ViewController
 {

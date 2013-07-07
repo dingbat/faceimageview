@@ -14,9 +14,6 @@
 		3714AC1B177E796A0020DE13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3714AC1A177E796A0020DE13 /* main.m */; };
 		3714AC1F177E796A0020DE13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3714AC1E177E796A0020DE13 /* AppDelegate.m */; };
 		3714AC28177E796A0020DE13 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3714AC27177E796A0020DE13 /* ViewController.m */; };
-		3714AC31177E796A0020DE13 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3714AC30177E796A0020DE13 /* XCTest.framework */; };
-		3714AC32177E796A0020DE13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3714AC0E177E796A0020DE13 /* Foundation.framework */; };
-		3714AC33177E796A0020DE13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3714AC12177E796A0020DE13 /* UIKit.framework */; };
 		3714AC48177E79900020DE13 /* FaceImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3714AC47177E79900020DE13 /* FaceImageView.m */; };
 		373512611789D286005139D6 /* beatles.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3735125C1789D286005139D6 /* beatles.jpg */; };
 		373512621789D286005139D6 /* gold-panda.png in Resources */ = {isa = PBXBuildFile; fileRef = 3735125D1789D286005139D6 /* gold-panda.png */; };
@@ -24,17 +21,9 @@
 		373512641789D286005139D6 /* squarepusher.png in Resources */ = {isa = PBXBuildFile; fileRef = 3735125F1789D286005139D6 /* squarepusher.png */; };
 		373512651789D286005139D6 /* toro.png in Resources */ = {isa = PBXBuildFile; fileRef = 373512601789D286005139D6 /* toro.png */; };
 		373512671789D297005139D6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 373512661789D297005139D6 /* Default-568h@2x.png */; };
+		3735126D1789D360005139D6 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3735126C1789D360005139D6 /* CoreImage.framework */; };
+		3735126F1789D364005139D6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3735126E1789D364005139D6 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		3714AC34177E796A0020DE13 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3714AC03177E796A0020DE13 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3714AC0A177E796A0020DE13;
-			remoteInfo = FaceImageView;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3714AC0B177E796A0020DE13 /* FaceImageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceImageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,8 +38,6 @@
 		3714AC1E177E796A0020DE13 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3714AC26177E796A0020DE13 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3714AC27177E796A0020DE13 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3714AC2F177E796A0020DE13 /* FaceImageViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceImageViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3714AC30177E796A0020DE13 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3714AC46177E79900020DE13 /* FaceImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceImageView.h; sourceTree = "<group>"; };
 		3714AC47177E79900020DE13 /* FaceImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceImageView.m; sourceTree = "<group>"; };
 		3735125C1789D286005139D6 /* beatles.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beatles.jpg; sourceTree = "<group>"; };
@@ -59,6 +46,8 @@
 		3735125F1789D286005139D6 /* squarepusher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squarepusher.png; sourceTree = "<group>"; };
 		373512601789D286005139D6 /* toro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toro.png; sourceTree = "<group>"; };
 		373512661789D297005139D6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		3735126C1789D360005139D6 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		3735126E1789D364005139D6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,19 +55,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3735126F1789D364005139D6 /* QuartzCore.framework in Frameworks */,
+				3735126D1789D360005139D6 /* CoreImage.framework in Frameworks */,
 				3714AC11177E796A0020DE13 /* CoreGraphics.framework in Frameworks */,
 				3714AC13177E796A0020DE13 /* UIKit.framework in Frameworks */,
 				3714AC0F177E796A0020DE13 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3714AC2C177E796A0020DE13 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3714AC31177E796A0020DE13 /* XCTest.framework in Frameworks */,
-				3714AC33177E796A0020DE13 /* UIKit.framework in Frameworks */,
-				3714AC32177E796A0020DE13 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				3714AC0B177E796A0020DE13 /* FaceImageView.app */,
-				3714AC2F177E796A0020DE13 /* FaceImageViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,10 +86,11 @@
 		3714AC0D177E796A0020DE13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3735126E1789D364005139D6 /* QuartzCore.framework */,
+				3735126C1789D360005139D6 /* CoreImage.framework */,
 				3714AC0E177E796A0020DE13 /* Foundation.framework */,
 				3714AC10177E796A0020DE13 /* CoreGraphics.framework */,
 				3714AC12177E796A0020DE13 /* UIKit.framework */,
-				3714AC30177E796A0020DE13 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,24 +154,6 @@
 			productReference = 3714AC0B177E796A0020DE13 /* FaceImageView.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3714AC2E177E796A0020DE13 /* FaceImageViewTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3714AC43177E796A0020DE13 /* Build configuration list for PBXNativeTarget "FaceImageViewTests" */;
-			buildPhases = (
-				3714AC2B177E796A0020DE13 /* Sources */,
-				3714AC2C177E796A0020DE13 /* Frameworks */,
-				3714AC2D177E796A0020DE13 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3714AC35177E796A0020DE13 /* PBXTargetDependency */,
-			);
-			name = FaceImageViewTests;
-			productName = FaceImageViewTests;
-			productReference = 3714AC2F177E796A0020DE13 /* FaceImageViewTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -219,7 +182,6 @@
 			projectRoot = "";
 			targets = (
 				3714AC0A177E796A0020DE13 /* FaceImageView */,
-				3714AC2E177E796A0020DE13 /* FaceImageViewTests */,
 			);
 		};
 /* End PBXProject section */
@@ -239,13 +201,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3714AC2D177E796A0020DE13 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -260,22 +215,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3714AC2B177E796A0020DE13 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3714AC35177E796A0020DE13 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3714AC0A177E796A0020DE13 /* FaceImageView */;
-			targetProxy = 3714AC34177E796A0020DE13 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3714AC17177E796A0020DE13 /* InfoPlist.strings */ = {
@@ -387,48 +327,6 @@
 			};
 			name = Release;
 		};
-		3714AC44177E796A0020DE13 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FaceImageView.app/FaceImageView";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode5-DP2.app/Contents/Developer/Library/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FaceImageView/FaceImageView-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "FaceImageViewTests/FaceImageViewTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		3714AC45177E796A0020DE13 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FaceImageView.app/FaceImageView";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode5-DP2.app/Contents/Developer/Library/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FaceImageView/FaceImageView-Prefix.pch";
-				INFOPLIST_FILE = "FaceImageViewTests/FaceImageViewTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -446,15 +344,6 @@
 			buildConfigurations = (
 				3714AC41177E796A0020DE13 /* Debug */,
 				3714AC42177E796A0020DE13 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3714AC43177E796A0020DE13 /* Build configuration list for PBXNativeTarget "FaceImageViewTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3714AC44177E796A0020DE13 /* Debug */,
-				3714AC45177E796A0020DE13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
