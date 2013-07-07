@@ -14,16 +14,16 @@
 		3714AC1B177E796A0020DE13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3714AC1A177E796A0020DE13 /* main.m */; };
 		3714AC1F177E796A0020DE13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3714AC1E177E796A0020DE13 /* AppDelegate.m */; };
 		3714AC28177E796A0020DE13 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3714AC27177E796A0020DE13 /* ViewController.m */; };
-		3714AC2A177E796A0020DE13 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3714AC29177E796A0020DE13 /* Images.xcassets */; };
 		3714AC31177E796A0020DE13 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3714AC30177E796A0020DE13 /* XCTest.framework */; };
 		3714AC32177E796A0020DE13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3714AC0E177E796A0020DE13 /* Foundation.framework */; };
 		3714AC33177E796A0020DE13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3714AC12177E796A0020DE13 /* UIKit.framework */; };
 		3714AC48177E79900020DE13 /* FaceImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3714AC47177E79900020DE13 /* FaceImageView.m */; };
-		37428E69177E7AE4008029FE /* gold-panda.png in Resources */ = {isa = PBXBuildFile; fileRef = 37428E68177E7AE4008029FE /* gold-panda.png */; };
-		37428E6B177E7C52008029FE /* gp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37428E6A177E7C52008029FE /* gp.jpg */; };
-		37428E6D177E81D2008029FE /* beatles.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37428E6C177E81D2008029FE /* beatles.jpg */; };
-		37428E73177E92AE008029FE /* toro.png in Resources */ = {isa = PBXBuildFile; fileRef = 37428E72177E92AE008029FE /* toro.png */; };
-		37428E7A177E940C008029FE /* squarepusher.png in Resources */ = {isa = PBXBuildFile; fileRef = 37428E79177E940C008029FE /* squarepusher.png */; };
+		373512611789D286005139D6 /* beatles.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3735125C1789D286005139D6 /* beatles.jpg */; };
+		373512621789D286005139D6 /* gold-panda.png in Resources */ = {isa = PBXBuildFile; fileRef = 3735125D1789D286005139D6 /* gold-panda.png */; };
+		373512631789D286005139D6 /* gp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3735125E1789D286005139D6 /* gp.jpg */; };
+		373512641789D286005139D6 /* squarepusher.png in Resources */ = {isa = PBXBuildFile; fileRef = 3735125F1789D286005139D6 /* squarepusher.png */; };
+		373512651789D286005139D6 /* toro.png in Resources */ = {isa = PBXBuildFile; fileRef = 373512601789D286005139D6 /* toro.png */; };
+		373512671789D297005139D6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 373512661789D297005139D6 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,16 +49,16 @@
 		3714AC1E177E796A0020DE13 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3714AC26177E796A0020DE13 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3714AC27177E796A0020DE13 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3714AC29177E796A0020DE13 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3714AC2F177E796A0020DE13 /* FaceImageViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceImageViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3714AC30177E796A0020DE13 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3714AC46177E79900020DE13 /* FaceImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceImageView.h; sourceTree = "<group>"; };
 		3714AC47177E79900020DE13 /* FaceImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceImageView.m; sourceTree = "<group>"; };
-		37428E68177E7AE4008029FE /* gold-panda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gold-panda.png"; sourceTree = "<group>"; };
-		37428E6A177E7C52008029FE /* gp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gp.jpg; sourceTree = "<group>"; };
-		37428E6C177E81D2008029FE /* beatles.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beatles.jpg; sourceTree = "<group>"; };
-		37428E72177E92AE008029FE /* toro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toro.png; sourceTree = "<group>"; };
-		37428E79177E940C008029FE /* squarepusher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squarepusher.png; sourceTree = "<group>"; };
+		3735125C1789D286005139D6 /* beatles.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beatles.jpg; sourceTree = "<group>"; };
+		3735125D1789D286005139D6 /* gold-panda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gold-panda.png"; sourceTree = "<group>"; };
+		3735125E1789D286005139D6 /* gp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gp.jpg; sourceTree = "<group>"; };
+		3735125F1789D286005139D6 /* squarepusher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squarepusher.png; sourceTree = "<group>"; };
+		373512601789D286005139D6 /* toro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toro.png; sourceTree = "<group>"; };
+		373512661789D297005139D6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,14 +117,14 @@
 		3714AC14177E796A0020DE13 /* FaceImageView */ = {
 			isa = PBXGroup;
 			children = (
-				37428E76177E93B6008029FE /* Images */,
 				3714AC1D177E796A0020DE13 /* AppDelegate.h */,
 				3714AC1E177E796A0020DE13 /* AppDelegate.m */,
 				3714AC26177E796A0020DE13 /* ViewController.h */,
 				3714AC27177E796A0020DE13 /* ViewController.m */,
 				3714AC46177E79900020DE13 /* FaceImageView.h */,
 				3714AC47177E79900020DE13 /* FaceImageView.m */,
-				3714AC29177E796A0020DE13 /* Images.xcassets */,
+				373512661789D297005139D6 /* Default-568h@2x.png */,
+				3735125B1789D286005139D6 /* Images */,
 				3714AC15177E796A0020DE13 /* Supporting Files */,
 			);
 			path = FaceImageView;
@@ -141,16 +141,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		37428E76177E93B6008029FE /* Images */ = {
+		3735125B1789D286005139D6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				37428E79177E940C008029FE /* squarepusher.png */,
-				37428E68177E7AE4008029FE /* gold-panda.png */,
-				37428E6A177E7C52008029FE /* gp.jpg */,
-				37428E6C177E81D2008029FE /* beatles.jpg */,
-				37428E72177E92AE008029FE /* toro.png */,
+				3735125C1789D286005139D6 /* beatles.jpg */,
+				3735125D1789D286005139D6 /* gold-panda.png */,
+				3735125E1789D286005139D6 /* gp.jpg */,
+				3735125F1789D286005139D6 /* squarepusher.png */,
+				373512601789D286005139D6 /* toro.png */,
 			);
-			name = Images;
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,13 +229,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37428E6B177E7C52008029FE /* gp.jpg in Resources */,
-				37428E6D177E81D2008029FE /* beatles.jpg in Resources */,
-				37428E69177E7AE4008029FE /* gold-panda.png in Resources */,
-				3714AC2A177E796A0020DE13 /* Images.xcassets in Resources */,
 				3714AC19177E796A0020DE13 /* InfoPlist.strings in Resources */,
-				37428E7A177E940C008029FE /* squarepusher.png in Resources */,
-				37428E73177E92AE008029FE /* toro.png in Resources */,
+				373512611789D286005139D6 /* beatles.jpg in Resources */,
+				373512621789D286005139D6 /* gold-panda.png in Resources */,
+				373512631789D286005139D6 /* gp.jpg in Resources */,
+				373512641789D286005139D6 /* squarepusher.png in Resources */,
+				373512651789D286005139D6 /* toro.png in Resources */,
+				373512671789D297005139D6 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +403,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "FaceImageViewTests/FaceImageViewTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -421,6 +422,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FaceImageView/FaceImageView-Prefix.pch";
 				INFOPLIST_FILE = "FaceImageViewTests/FaceImageViewTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
