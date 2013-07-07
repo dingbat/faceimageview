@@ -12,10 +12,19 @@ A small demo app is included to try out different images and view sizes.
 Usage
 --------
 
-As simple as instantiating one, giving it an image, and adding it to your view:
-```objc
-FaceImageView *imageView = [[FaceImageView alloc] initWithFrame:<frame>];
-imageView.image = [UIImage imageNamed:@"image"];
+**Installing**
+
+Add FaceImageView.{h,m} included in the demo project to your source, or, using CocoaPods, add the following to your Podfile:
+```
+pod 'FaceImageView'
+```
+
+**Using**
+
+As simple as instantiating a FaceImageView object, giving it an image, and adding it to your view:
+```
+FaceImageView *imageView = [[FaceImageView alloc] initWithFrame:<CGRect>];
+imageView.image = <UIImage>;
 [self.view addSubview:imageView];
 ```
 
