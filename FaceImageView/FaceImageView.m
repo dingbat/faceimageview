@@ -20,20 +20,34 @@
     CIDetector *_faceDetector;
 }
 
+
+- (void)setup
+{
+    _faceTrackingEnabled = YES;
+    self.userInteractionEnabled = NO;
+    
+    _faceDetector = [CIDetector detectorOfType:CIDetectorTypeFace
+                                       context:nil
+                                       options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
+}
+
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self)
     {
-        _faceTrackingEnabled = YES;
-        self.userInteractionEnabled = NO;
-		
-        _faceDetector = [CIDetector detectorOfType:CIDetectorTypeFace
-                                           context:nil
-                                           options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
+        [self setup];
     }
     return self;
 }
+
+
+- (void)awakeFromNib
+{
+    [self setup];
+}
+
 
 - (void) calculateCentroidOfFaceLocations
 {
