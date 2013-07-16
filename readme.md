@@ -28,6 +28,12 @@ imageView.image = <UIImage>;
 [self.view addSubview:imageView];
 ```
 
+It may also be wise to set the image asynchronously, as face detection can sometimes take a second:
+
+```
+[imageView setImage:<UIImage> completion:^{}];
+```
+
 Demo App
 ---------
 

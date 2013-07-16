@@ -15,4 +15,6 @@
 
 @property (nonatomic, readonly) int numberOfFacesDetected;
 
+- (void) setImage:(UIImage *)image completion:(void(^)(void))block;
+
 @end

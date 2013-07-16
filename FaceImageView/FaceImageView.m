@@ -86,6 +86,22 @@
     _centroid = centroid;
 }
 
+- (void) setImage:(UIImage *)image completion:(void(^)(void))block
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^
+                   {
+                       [self setImage:image];
+                       
+                       dispatch_async(dispatch_get_main_queue(), ^
+                                      {
+                                          [self setNeedsDisplay];
+                                          
+                                          if (block)
+                                              block();
+                                      });
+                   });
+}
+
 - (void) setImage:(UIImage *)image
 {
     _image = image;
